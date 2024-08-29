@@ -1,6 +1,11 @@
+import { FilterProps } from '@/types'
 import React from 'react'
 
-const CustomFilter = () => {
+interface CustomFilterProps {
+  title: string
+}
+
+const CustomFilter = ({ title }: CustomFilterProps) => {
   return (
     <div>CustomFilter</div>
   )

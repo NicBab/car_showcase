@@ -41,13 +41,17 @@ export const deleteSearchParams = (type: string) => {
   return newPathname;
 };
 
+
+
 export async function fetchCars(filters: FilterProps) {
+
   const { manufacturer, year, model, limit, fuel } = filters;
+  const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
 
   // Set the required headers for the API request
   const headers: HeadersInit = {
-    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
-    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
+    'x-rapidapi-key': 'c1124a5eb0msh19503ada16f0daap15b157jsnf9d057926559',
+    'x-rapidapi-host': 'cars-by-api-ninjas.p.rapidapi.com'
   };
 
   // Set the required headers for the API request
@@ -63,6 +67,8 @@ export async function fetchCars(filters: FilterProps) {
 
   return result;
 }
+
+
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
