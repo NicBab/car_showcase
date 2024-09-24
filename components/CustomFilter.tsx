@@ -44,9 +44,9 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
               {options.map((option) => (
                 <ListboxOption
                   key={option.title}
-                  className={({ focus }) =>
+                  className={({ active }) =>
                     `relative cursor-default select-none py-2 px-4 ${
-                      focus ? "bg-primary-blue text-white" : "text-gray-900"
+                      active ? "bg-primary-blue text-white" : "text-gray-900"
                     }`
                   }
                   value={option}
